@@ -9,11 +9,11 @@ import java.time.LocalDate;
 public class ClientDTO {
 
     private long id;
-    @NotBlank(message = "Campo requerido")
+    @NotBlank(message = "Nome não pode ser vazio")
     private String name;
     private String cpf;
     private double income;
-    @PastOrPresent(message = "A data não pode ser futura")
+    @PastOrPresent(message = "Data de nascimento não pode ser data futura")
     private LocalDate birthDate;
     private int children;
 
@@ -29,7 +29,7 @@ public class ClientDTO {
         this.children = children;
     }
 
-    public ClientDTO(Client entity){
+    public ClientDTO(Client entity) {
         id = entity.getId();
         name = entity.getName();
         cpf = entity.getCpf();
